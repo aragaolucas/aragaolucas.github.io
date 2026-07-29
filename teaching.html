@@ -1,40 +1,257 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Lucas Aragão - Teaching</title><style>body {
-            font-family: Arial, sans-serif;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Aragão - Teaching</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+            --text-heading: #0f172a;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
+            background-color: var(--bg);
+            color: var(--text);
         }
+
+        header {
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 20px;
+        }
+
         h1 {
-            color: #333;
+            color: var(--text-heading);
+            margin-bottom: 10px;
+            font-size: 2rem;
         }
-        nava {
-            margin-right: 15px;
+
+        /* Menu de Navegação */
+        nav a {
+            margin-right: 20px;
             text-decoration: none;
-            color: #0073e6;
+            color: var(--primary);
+            font-weight: 600;
+            transition: color 0.2s;
         }
-        nava:hover {
+
+        nav a:hover {
+            color: var(--primary-hover);
             text-decoration: underline;
         }
-    </style></head><body><h1>Lucas Aragão - Teaching</h1><!-- Menu de navegação --><nav><a href="index.html">Home     </a><a href="teaching.html">  Teaching</a></nav>
+
+        h2 {
+            color: var(--text-heading);
+            margin-top: 30px;
+            font-size: 1.5rem;
+        }
+
+        /* Card da Disciplina */
+        .course-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .course-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+        }
+
+        .course-title {
+            margin: 0;
+            color: var(--text-heading);
+            font-size: 1.3rem;
+        }
+
+        /* Badges de nível */
+        .badge {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-grad {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-pos {
+            background-color: #f3e8ff;
+            color: #6b21a8;
+        }
+
+        /* Detalhes da Disciplina */
+        .course-details {
+            display: grid;
+            gap: 8px;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .course-details p {
+            margin: 0;
+        }
+
+        .course-details strong {
+            color: var(--text-heading);
+        }
+
+        /* Lista de Ementa e Bibliografia */
+        .course-details ul, 
+        .course-details ol {
+            margin: 4px 0 8px 20px;
+            padding: 0;
+        }
+
+        /* Links de Provas */
+        .exams-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border);
+        }
+
+        .exams-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .btn-exam {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background-color: var(--bg);
+            color: var(--text-heading);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-exam:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Lucas Aragão</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="teaching.html">Teaching</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Cursos Passados</h2>
+
+        <!-- CURSO 1: CÁLCULO AVANÇADO 1 -->
+        <div class="course-card">
+            <div class="course-header">
+                <h3 class="course-title">Cálculo Avançado 1 — MAE701</h3>
+                <span class="badge badge-pos">Mestrado • 2026.1</span>
+            </div>
+
+            <div class="course-details">
+                <p><strong>Horário:</strong> Segundas e Quartas de 08:00 às 10:00</p>
+                <p><strong>Local:</strong> B-108 B</p>
+                <p><strong>Avaliação:</strong> Três Provas</p>
                 
-                <h2>Cursos Passados</h2>
-
-                <h3>Cálculo Avançado I - MAE701 - Mestrado - 26.1</h3>
-                <p>Você pode acessar as provas passadas aqui:</p>
-                <p>
-                            <a href="Provas Antigas/C.A.1 - 26.1 - Teste 1.pdf" target="_blank">Teste 1</a>. 
-                            <a href="Provas Antigas/C.A.1 - 26. 1 - Prova 1.pdf" target="_blank">Prova 1</a>.  
-                            <a href="Provas Antigas/C.A.1 - 26.1 - Prova 2.pdf" target="_blank">Prova 2</a>. 
-                </p>
+                <p style="margin-top: 8px;"><strong>Ementa / Conteúdo:</strong></p>
+                <ul>
+                    <li>Espaços Métricos</li>
+                    <li>Compactos</li>
+                    <li>Conexos</li>
+                    <li>Continuidade</li>
+                    <li>Diferenciação</li>
+                    <li>Integral de Riemann-Stieltjes</li>
+                    <li>Sucessões e séries de funções</li>
+                    <li>Teorema de Stone-Weierstrass</li>
+                    <li>Funções de várias variáveis</li>
+                    <li>Teorema da função inversa</li>
+                    <li>Teorema da função implícita</li>
+                    <li>Teorema de Stokes</li>
+                </ul>
                 
-                <h3>Cálculo II - MAE992- Graduação - 26.1</h3>
-                <p>Você pode acessar as provas passadas aqui:</p>
-                <p>
-                            <a href="Provas Antigas/Teste 1 - Cálculo 2 - 26.1.pdf" target="_blank">Teste 1</a>. 
-                            <a href="Provas Antigas/Prova 1 - Cálculo 2 - 26.1.pdf" target="_blank">Prova 1</a>. 
-                            <a href="Provas Antigas/Prova 2 - Cálculo 2 - 26.1.pdf" target="_blank">Prova 2</a>.
-                </p>
+                <p style="margin-top: 8px;"><strong>Bibliografia:</strong></p>
+                <ul>
+                    <li>CIPOLATTI, Rolci. <em>Cálculo Avançado</em>. Rio de Janeiro: Editora SBM (Coleção Textos Universitários).</li>
+                </ul>
+            </div>
 
+            <div class="exams-section">
+                <strong>Provas e Avaliações:</strong>
+                <div class="exams-container">
+                    <a class="btn-exam" href="Provas%20Antigas/C.A.1%20-%2026.1%20-%20Teste%201.pdf" target="_blank">📄 Teste 1</a>
+                    <a class="btn-exam" href="Provas%20Antigas/C.A.1%20-%2026.%201%20-%20Prova%201.pdf" target="_blank">📄 Prova 1</a>
+                    <a class="btn-exam" href="Provas%20Antigas/C.A.1%20-%2026.1%20-%20Prova%202.pdf" target="_blank">📄 Prova 2</a>
+                </div>
+            </div>
+        </div>
 
-            <!-- Adicione mais cursos conforme necessário --></body></html>
+        <!-- CURSO 2: CÁLCULO II -->
+        <div class="course-card">
+            <div class="course-header">
+                <h3 class="course-title">Cálculo II — MAE992</h3>
+                <span class="badge badge-grad">Graduação • 2026.1</span>
+            </div>
+
+            <div class="course-details">
+                <p><strong>Horário:</strong> Segundas e Quartas de 10:00 às 12:00</p>
+                <p><strong>Local:</strong> D-116</p>
+                <p><strong>Avaliação:</strong> Três Provas</p>
+                
+                <p style="margin-top: 8px;"><strong>Ementa / Conteúdo:</strong></p>
+                <p>Curvas no plano e no espaço, velocidade e aceleração. Funções de duas e mais variáveis, derivadas direcionais. Derivadas parciais e derivada como aproximação linear. Funções implícitas, multiplicadores de lagrange. Hessiana. Equações diferenciais ordinárias de primeira ordem e equações diferenciais ordinárias de segunda ordem com coeficientes constantes.</p>
+                
+                <p style="margin-top: 8px;"><strong>Bibliografia:</strong></p>
+                <ul>
+                    <li>STEWART, James. <em>Cálculo - Volume 2</em>. 8. ed. São Paulo: Cengage Learning, 2016.</li>
+                </ul>
+            </div>
+
+            <div class="exams-section">
+                <strong>Provas e Avaliações:</strong>
+                <div class="exams-container">
+                    <a class="btn-exam" href="Provas%20Antigas/Teste%201%20-%20C%C3%A1lculo%202%20-%2026.1.pdf" target="_blank">📄 Teste 1</a>
+                    <a class="btn-exam" href="Provas%20Antigas/Prova%201%20-%20C%C3%A1lculo%202%20-%2026.1.pdf" target="_blank">📄 Prova 1</a>
+                    <a class="btn-exam" href="Provas%20Antigas/Prova%202%20-%20C%C3%A1lculo%202%20-%2026.1.pdf" target="_blank">📄 Prova 2</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
