@@ -51,10 +51,12 @@
             text-decoration: underline;
         }
 
-        h2 {
-            color: var(--text-heading);
-            margin-top: 30px;
-            font-size: 1.5rem;
+        h2.section-title {
+            color: var(--primary);
+            margin-top: 40px;
+            font-size: 1.6rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 8px;
         }
 
         /* Card da Disciplina */
@@ -120,46 +122,64 @@
             color: var(--text-heading);
         }
 
-        /* Lista de Ementa e Bibliografia */
-        .course-details ul, 
-        .course-details ol {
+        .course-details ul {
             margin: 4px 0 8px 20px;
             padding: 0;
         }
 
-        /* Links de Provas */
-        .exams-section {
+        /* Área de Materiais (Provas e Listas) */
+        .materials-section {
             margin-top: 20px;
             padding-top: 15px;
             border-top: 1px dashed var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        .exams-container {
+        .material-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .buttons-container {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
-            margin-top: 10px;
         }
 
-        .btn-exam {
+        .btn-material {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 8px 14px;
+            padding: 6px 12px;
             background-color: var(--bg);
             color: var(--text-heading);
             border: 1px solid var(--border);
             border-radius: 6px;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             transition: all 0.2s;
         }
 
-        .btn-exam:hover {
+        .btn-material:hover {
             background-color: var(--primary);
             color: white;
             border-color: var(--primary);
+        }
+
+        .btn-disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            background-color: #f1f5f9;
+        }
+
+        .btn-disabled:hover {
+            background-color: #f1f5f9;
+            color: var(--text-heading);
+            border-color: var(--border);
         }
     </style>
 </head>
@@ -168,15 +188,102 @@
     <header>
         <h1>Lucas Aragão</h1>
         <nav>
-            <a href="index.html">Principal</a>
-            <a href="teaching.html">Ensino</a>
+            <a href="index.html">Home</a>
+            <a href="teaching.html">Teaching</a>
         </nav>
     </header>
 
     <main>
-        <h2>Cursos Passados</h2>
 
-        <!-- CURSO 1: CÁLCULO AVANÇADO 1 -->
+        <!-- ==================== CURSOS ATUAIS ==================== -->
+        <h2 class="section-title">Cursos Atuais (2026.2)</h2>
+
+        <!-- CÁLCULO AVANÇADO 2 -->
+        <div class="course-card">
+            <div class="course-header">
+                <h3 class="course-title">Cálculo Avançado 2 — MAE702</h3>
+                <span class="badge badge-pos">Mestrado • 2026.2</span>
+            </div>
+
+            <div class="course-details">
+                <p><strong>Horário:</strong> Terças e Quintas das 13:00 às 15:00</p>
+                <p><strong>Local:</strong> ABC - 116</p>
+                <p><strong>Avaliação:</strong> [Em breve]</p>
+                
+                <p style="margin-top: 8px;"><strong>Ementa / Conteúdo:</strong></p>
+                <p>Integração Múltipla: Critério de Riemann-Lebesgue, Medida Nula. Integrais Iteradas. O Jacobiano e Mudanças de Variáveis. Integrais de Linha e de Superfície. Potencial, Teoremas de Stokes e Gauss. Noções sobre Formas Diferenciais.</p>
+                
+                <p style="margin-top: 8px;"><strong>Bibliografia:</strong></p>
+                <ul>
+                    <li>R. Courant & F. John, <em>Introduction to Calculus and Analysis</em>, vol.2, Wiley, 1974.</li>
+                    <li>E. L. Lima, <em>Curso de Análise</em>, vol.2, Projeto Euclides, IMPA, 1985.</li>
+                </ul>
+            </div>
+
+            <div class="materials-section">
+                <div class="material-group">
+                    <strong>Listas de Exercícios:</strong>
+                    <div class="buttons-container">
+                        <span class="btn-material btn-disabled">📝 Lista 1 (Em breve)</span>
+                        <span class="btn-material btn-disabled">📝 Lista 2 (Em breve)</span>
+                        <span class="btn-material btn-disabled">📝 Lista 3 (Em breve)</span>
+                    </div>
+                </div>
+                <div class="material-group">
+                    <strong>Provas e Avaliações:</strong>
+                    <div class="buttons-container">
+                        <span class="btn-material btn-disabled">📄 Prova 1 (Em breve)</span>
+                        <span class="btn-material btn-disabled">📄 Prova 2 (Em breve)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ÁLGEBRA LINEAR II -->
+        <div class="course-card">
+            <div class="course-header">
+                <h3 class="course-title">Álgebra Linear II — MAE125</h3>
+                <span class="badge badge-grad">Graduação • 2026.2</span>
+            </div>
+
+            <div class="course-details">
+                <p><strong>Horário:</strong> Terças e Quintas das 15:00 às 17:00</p>
+                <p><strong>Local:</strong> [Em breve]</p>
+                <p><strong>Avaliação:</strong> [Em breve]</p>
+                
+                <p style="margin-top: 8px;"><strong>Ementa / Conteúdo:</strong></p>
+                <p>Sistemas de equações lineares e Eliminação Gaussiana. Matrizes e determinante. Espaços vetoriais Euclidianos. Geometria dos espaços vetoriais de dimensão finita. Transformações lineares. Espaços vetoriais com produto interno. Ortogonalidade e mínimos quadrados. Autovalores e autovetores. Teorema espectral. Aplicações à solução de Equações Diferenciais Ordinárias e em Geometria Euclidiana.</p>
+                
+                <p style="margin-top: 8px;"><strong>Bibliografia:</strong></p>
+                <ul>
+                    <li>CABRAL, Marco; GOLDFELD, Paulo. <em>Curso de Álgebra Linear: fundamentos e aplicações</em>. 3. ed. Rio de Janeiro: Instituto de Matemática/UFRJ, 2021.</li>
+                </ul>
+            </div>
+
+            <div class="materials-section">
+                <div class="material-group">
+                    <strong>Listas de Exercícios:</strong>
+                    <div class="buttons-container">
+                        <span class="btn-material btn-disabled">📝 Lista 1 (Em breve)</span>
+                        <span class="btn-material btn-disabled">📝 Lista 2 (Em breve)</span>
+                        <span class="btn-material btn-disabled">📝 Lista 3 (Em breve)</span>
+                    </div>
+                </div>
+                <div class="material-group">
+                    <strong>Provas e Avaliações:</strong>
+                    <div class="buttons-container">
+                        <span class="btn-material btn-disabled">📄 Prova 1 (Em breve)</span>
+                        <span class="btn-material btn-disabled">📄 Prova 2 (Em breve)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ==================== CURSOS PASSADOS ==================== -->
+        <h2 class="section-title">Cursos Passados</h2>
+
+        <!-- CÁLCULO AVANÇADO 1 -->
         <div class="course-card">
             <div class="course-header">
                 <h3 class="course-title">Cálculo Avançado 1 — MAE701</h3>
@@ -210,17 +317,27 @@
                 </ul>
             </div>
 
-            <div class="exams-section">
-                <strong>Provas e Avaliações:</strong>
-                <div class="exams-container">
-                    <a class="btn-exam" href="Provas%20Antigas/C.A.1%20-%2026.1%20-%20Teste%201.pdf" target="_blank">📄 Teste 1</a>
-                    <a class="btn-exam" href="Provas%20Antigas/C.A.1%20-%2026.%201%20-%20Prova%201.pdf" target="_blank">📄 Prova 1</a>
-                    <a class="btn-exam" href="Provas%20Antigas/C.A.1%20-%2026.1%20-%20Prova%202.pdf" target="_blank">📄 Prova 2</a>
+            <div class="materials-section">
+                <div class="material-group">
+                    <strong>Listas de Exercícios:</strong>
+                    <div class="buttons-container">
+                        <!-- Basta alterar o href="caminho-da-lista.pdf" quando publicar suas listas -->
+                        <a class="btn-material" href="#">📝 Lista 1</a>
+                        <a class="btn-material" href="#">📝 Lista 2</a>
+                    </div>
+                </div>
+                <div class="material-group">
+                    <strong>Provas e Avaliações:</strong>
+                    <div class="buttons-container">
+                        <a class="btn-material" href="Provas%20Antigas/C.A.1%20-%2026.1%20-%20Teste%201.pdf" target="_blank">📄 Teste 1</a>
+                        <a class="btn-material" href="Provas%20Antigas/C.A.1%20-%2026.%201%20-%20Prova%201.pdf" target="_blank">📄 Prova 1</a>
+                        <a class="btn-material" href="Provas%20Antigas/C.A.1%20-%2026.1%20-%20Prova%202.pdf" target="_blank">📄 Prova 2</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- CURSO 2: CÁLCULO II -->
+        <!-- CÁLCULO II -->
         <div class="course-card">
             <div class="course-header">
                 <h3 class="course-title">Cálculo II — MAE992</h3>
@@ -241,12 +358,22 @@
                 </ul>
             </div>
 
-            <div class="exams-section">
-                <strong>Provas e Avaliações:</strong>
-                <div class="exams-container">
-                    <a class="btn-exam" href="Provas%20Antigas/Teste%201%20-%20C%C3%A1lculo%202%20-%2026.1.pdf" target="_blank">📄 Teste 1</a>
-                    <a class="btn-exam" href="Provas%20Antigas/Prova%201%20-%20C%C3%A1lculo%202%20-%2026.1.pdf" target="_blank">📄 Prova 1</a>
-                    <a class="btn-exam" href="Provas%20Antigas/Prova%202%20-%20C%C3%A1lculo%202%20-%2026.1.pdf" target="_blank">📄 Prova 2</a>
+            <div class="materials-section">
+                <div class="material-group">
+                    <strong>Listas de Exercícios:</strong>
+                    <div class="buttons-container">
+                        <!-- Basta alterar o href="caminho-da-lista.pdf" quando publicar suas listas -->
+                        <a class="btn-material" href="#">📝 Lista 1</a>
+                        <a class="btn-material" href="#">📝 Lista 2</a>
+                    </div>
+                </div>
+                <div class="material-group">
+                    <strong>Provas e Avaliações:</strong>
+                    <div class="buttons-container">
+                        <a class="btn-material" href="Provas%20Antigas/Teste%201%20-%20C%C3%A1lculo%202%20-%2026.1.pdf" target="_blank">📄 Teste 1</a>
+                        <a class="btn-material" href="Provas%20Antigas/Prova%201%20-%20C%C3%A1lculo%202%20-%2026.1.pdf" target="_blank">📄 Prova 1</a>
+                        <a class="btn-material" href="Provas%20Antigas/Prova%202%20-%20C%C3%A1lculo%202%20-%2026.1.pdf" target="_blank">📄 Prova 2</a>
+                    </div>
                 </div>
             </div>
         </div>
