@@ -8,152 +8,322 @@
 
     <title>Lucas Aragão - Personal Website</title>
     <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+            --text-heading: #0f172a;
+            --border: #e2e8f0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
+            background-color: var(--bg);
+            color: var(--text);
         }
+
+        header {
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 20px;
+        }
+
         h1 {
-            color: #333;
+            color: var(--text-heading);
+            margin-bottom: 10px;
+            font-size: 2rem;
         }
-        nav {
-            margin-bottom: 20px;
-        }
+
+        /* Menu de Navegação */
         nav a {
             margin-right: 20px;
             text-decoration: none;
-            color: #0073e6;
-            font-weight: bold;
+            color: var(--primary);
+            font-weight: 600;
+            transition: color 0.2s;
         }
+
         nav a:hover {
+            color: var(--primary-hover);
             text-decoration: underline;
         }
-        .profile-pic, .cats-pic {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
+
+        /* Grid da Seção de Apresentação (Perfil) */
+        .profile-container {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 25px;
+            align-items: start;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
+
+        .photos-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
         .profile-pic {
+            width: 100%;
             max-width: 200px;
+            border-radius: 8px;
+            object-fit: cover;
         }
+
         .cats-pic {
-            max-width: 150px; /* Limita a largura da foto */
-            height: auto;     /* Mantém a proporção */
-            border-radius: 10px; /* Bordas arredondadas */
-            margin-left: 60px;
+            width: 80%;
+            max-width: 150px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .info-wrapper h2 {
+            margin-top: 0;
+            color: var(--text-heading);
+            font-size: 1.3rem;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border);
+            font-size: 0.95rem;
+        }
+
+        .contact-info p {
+            margin: 4px 0;
+        }
+
+        .about-me {
+            font-size: 0.95rem;
+        }
+
+        .about-me a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .about-me a:hover {
+            text-decoration: underline;
+        }
+
+        /* Seção de Publicações */
+        .publications-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .publications-section h2 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 8px;
             margin-bottom: 20px;
         }
-        section {
-            margin-bottom: 20px;
+
+        .publications-section h3 {
+            color: var(--text-heading);
+            font-size: 1.15rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
         }
-        .publications a {
-            display: block;
-            margin-bottom: 5px;
-            color: #0073e6;
+
+        .paper-item {
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
         }
-        .publications p {
+
+        .paper-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .paper-title {
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1rem;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        .paper-title:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        .paper-authors {
             margin: 0;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .paper-journal {
+            margin: 2px 0 0 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .pdf-link {
+            display: inline-block;
+            margin-left: 6px;
+            padding: 1px 6px;
+            background-color: #e2e8f0;
+            color: var(--text-heading);
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .pdf-link:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .all-pubs {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border);
+        }
+
+        .all-pubs a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .all-pubs a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade para celulares */
+        @media (max-width: 650px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+            .photos-wrapper {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .cats-pic {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Lucas Aragão - Personal Website</h1>
 
-    <!-- Navigation Menu -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="teaching.html">Teaching</a>
-    </nav>
+    <header>
+        <h1>Lucas Aragão</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="teaching.html">Teaching</a>
+        </nav>
+    </header>
 
-    <!-- Profile Image -->
-    <img src="Lucas.JPG" alt="Lucas Aragão" class="profile-pic">
+    <main>
+        <!-- Perfil, Contato e Sobre -->
+        <div class="profile-container">
+            <div class="photos-wrapper">
+                <img src="Lucas.JPG" alt="Lucas Aragão" class="profile-pic">
+                <img src="amores.jpeg" alt="Amores - Minhas Gatas" class="cats-pic">
+            </div>
 
-    <!-- Cats Image -->
-    <img src="amores.jpeg" alt="Amores - Minhas Gatas" class="cats-pic">
+            <div class="info-wrapper">
+                <h2>Contact Information</h2>
+                <div class="contact-info">
+                    <p><strong>UFRJ (Universidade Federal do Rio de Janeiro)</strong></p>
+                    <p>Professor Assistente (Assistant Professor)</p>
+                    <p>UFRJ, Rio de Janeiro, Brasil</p>
+                    <p>Sala C-125, gabinete B - CT</p>
+                    <p>Email: aragao(at)im(dot)ufrj(dot)br</p>
+                </div>
 
-    <!-- Contact Information -->
-    <section>
-        <h2>Contact Information</h2>
-        <p><strong>UFRJ (Universidade Federal do Rio de Janeiro)</strong></p>
-        <p>Professor Assistente (Assistant Professor)</p>
-        <p>UFRJ, Rio de Janeiro, Brasil</p>
-        <p>Sala C-125, gabinete B - CT</p>
-        <p>Email: aragao(at)im(dot)ufrj(dot)br</p>
-    </section>
+                <h2>About Me</h2>
+                <div class="about-me">
+                    <p>
+                        I am Professor Adjunto (Assistant Professor) at UFRJ. 
+                        I had my PhD at IMPA under the supervision of 
+                        <a href="https://robiscounting.github.io/" target="_blank">Rob Morris</a>. 
+                        My research focuses mainly on extremal, probabilistic, and additive combinatorics.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-    <!-- About Me Section -->
-    <section>
-        <h2>About Me</h2>
-        <p>
-            
-            I am Professor Adjunto (Assistant Professor) at UFRJ. 
-            I had my PhD at IMPA under the supervision of 
-            <a href="https://robiscounting.github.io/" target="_blank">Rob Morris</a>. 
-            My research focuses mainly on extremal, probabilistic, and additive combinatorics.
-        </p>
-    </section>
+        <!-- Seção de Publicações -->
+        <section class="publications-section">
+            <h2>Recent Papers</h2>
 
-    <!-- Publications Section -->
+            <h3>Submitted Papers</h3>
 
-    <section class="publications">
-        <h2>Recent Papers</h2>
-    
-        <h3>Submitted Papers:</h3>
+            <div class="paper-item">
+                <a class="paper-title" href="https://arxiv.org/abs/2509.22629" target="_blank">An exponential upper bound for induced Ramsey numbers</a>
+                <p class="paper-authors">with Marcelo Campos, Gabriel Dahia, Rafael Filipe, and João Pedro Marciano.</p>
+            </div>
 
-        <a href="https://arxiv.org/abs/2509.22629">An exponential upper bound for induced Ramsey numbers</a>
-        <p>with Marcelo Campos, Gabriel Dahia, Rafael Filipe, and João Pedro Marciano.</p>
-        <br>
+            <div class="paper-item">
+                <a class="paper-title" href="https://arxiv.org/abs/2605.21471" target="_blank">Ramsey properties for tilings in random graphs</a>
+                <p class="paper-authors">with Xinbu Cheng, Rafael Filipe, Rafael Miyazaki, Danni Peng, and Zhifei Yan.</p>
+            </div>
 
-        <a href="https://arxiv.org/abs/2605.21471">Ramsey properties for tilings in random graphs</a>
-        <p>with  Xinbu Cheng, Rafael Filipe, Rafael Miyazaki, Danni Peng, and Zhifei Yan.</p>
-        
-        
-        <h3>Accepted Papers:</h3>
+            <h3>Accepted Papers</h3>
 
-        <a href="https://doi.org/10.1007/s00493-025-00183-x">On the number of monochromatic solutions to multiplicative equations</a>
-        <p>with Jonathan Chapman, Miquel Ortega, and Victor Souza.<br>
-            Combinatorica, 45 (2025), 64:
-            <a href="https://arxiv.org/abs/2311.18742" style="display: inline; margin-left: 5px;">pdf</a>
-        </p>
-        <br>
-        
-        <a href="https://doi.org/10.1016/j.ejc.2024.104082">Degree conditions for Ramsey goodness of paths</a>
-        <p>
-            with João Pedro Marciano and Walner Mendonça.<br>
-            European Journal of Combinatorics, 124 (2025), 104082: 
-            <a href="https://arxiv.org/pdf/2403.13742" style="display: inline; margin-left: 5px;">pdf</a>
-        </p>
-        <br>
+            <div class="paper-item">
+                <a class="paper-title" href="https://doi.org/10.1007/s00493-025-00183-x" target="_blank">On the number of monochromatic solutions to multiplicative equations</a>
+                <p class="paper-authors">with Jonathan Chapman, Miquel Ortega, and Victor Souza.</p>
+                <p class="paper-journal">Combinatorica, 45 (2025), 64 <a class="pdf-link" href="https://arxiv.org/abs/2311.18742" target="_blank">PDF</a></p>
+            </div>
 
-        <a href="https://doi.org/10.1016/j.ejc.2024.104078">The diameter of randomly twisted hypercubes</a>
-        <p>
-            with Maurício Collares, Gabriel Dahia, João Pedro Marciano.<br>
-            European Journal of Combinatorics, 124 (2025), 104078:
-            <a href="https://arxiv.org/pdf/2306.01728" style="display: inline; margin-left: 5px;">pdf</a>
-        </p>
-        <br>
-        
-        <a href="https://doi.org/10.1007/s00026-023-00672-0">Localised graph Maclaurin inequalities</a>
-        <p>
-            with Victor Souza.<br>
-            Annals of Combinatorics, 28 (2024), 1021-1033:
-            <a href="https://arxiv.org/pdf/2301.13189" style="display: inline; margin-left: 5px;">pdf</a>
-        </p>
-        <br>
-        
-        <a href="https://doi.org/10.1002/rsa.21173">A lower bound for set-colouring Ramsey numbers</a>
-        <p>
-            with Maurício Collares, João Pedro Marciano, Taísa Martins, and Robert Morris.<br>
-            Random Structures & Algorithms, 64 (2024), 157-169:
-            <a href="https://arxiv.org/pdf/2212.06802" style="display: inline; margin-left: 5px;">pdf</a>
-        </p>
-        <br>
-        
-        <p><a href="http://arxiv.org/a/aragao_l_1"><strong>List of all publications</strong></a></p>
-    </section>
+            <div class="paper-item">
+                <a class="paper-title" href="https://doi.org/10.1016/j.ejc.2024.104082" target="_blank">Degree conditions for Ramsey goodness of paths</a>
+                <p class="paper-authors">with João Pedro Marciano and Walner Mendonça.</p>
+                <p class="paper-journal">European Journal of Combinatorics, 124 (2025), 104082 <a class="pdf-link" href="https://arxiv.org/pdf/2403.13742" target="_blank">PDF</a></p>
+            </div>
+
+            <div class="paper-item">
+                <a class="paper-title" href="https://doi.org/10.1016/j.ejc.2024.104078" target="_blank">The diameter of randomly twisted hypercubes</a>
+                <p class="paper-authors">with Maurício Collares, Gabriel Dahia, João Pedro Marciano.</p>
+                <p class="paper-journal">European Journal of Combinatorics, 124 (2025), 104078 <a class="pdf-link" href="https://arxiv.org/pdf/2306.01728" target="_blank">PDF</a></p>
+            </div>
+
+            <div class="paper-item">
+                <a class="paper-title" href="https://doi.org/10.1007/s00026-023-00672-0" target="_blank">Localised graph Maclaurin inequalities</a>
+                <p class="paper-authors">with Victor Souza.</p>
+                <p class="paper-journal">Annals of Combinatorics, 28 (2024), 1021-1033 <a class="pdf-link" href="https://arxiv.org/pdf/2301.13189" target="_blank">PDF</a></p>
+            </div>
+
+            <div class="paper-item">
+                <a class="paper-title" href="https://doi.org/10.1002/rsa.21173" target="_blank">A lower bound for set-colouring Ramsey numbers</a>
+                <p class="paper-authors">with Maurício Collares, João Pedro Marciano, Taísa Martins, and Robert Morris.</p>
+                <p class="paper-journal">Random Structures & Algorithms, 64 (2024), 157-169 <a class="pdf-link" href="https://arxiv.org/pdf/2212.06802" target="_blank">PDF</a></p>
+            </div>
+
+            <div class="all-pubs">
+                <a href="http://arxiv.org/a/aragao_l_1" target="_blank">→ List of all publications (arXiv)</a>
+            </div>
+        </section>
+    </main>
 
 </body>
 </html>
